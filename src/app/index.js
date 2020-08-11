@@ -3,6 +3,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import Home from '@screens/Home/index';
 import HomeList from '@screens/HomeList';
 import ItemDetail from '@screens/ItemDetail';

@@ -1,10 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { SafeAreaView, Image} from 'react-native';
+import { SafeAreaView, Image, TouchableOpacity, View} from 'react-native';
 
-import BookItem from '@components/BookItem';
 import styles from './styles';
-import { TouchableOpacity, View } from 'react-native';
 import image from '@assets/image/books.png';
 
 const rpo = 'https://images-na.ssl-images-amazon.com/images/I/71BjAljTQeL.jpg';

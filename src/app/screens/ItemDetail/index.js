@@ -1,8 +1,7 @@
 import React from 'react';
-import { SafeAreaView, Text, Image, View } from 'react-native';
+import { SafeAreaView, Text, Image, View, ScrollView } from 'react-native';
 
 import styles from './styles';
-import { ScrollView } from 'react-native-gesture-handler';
 
 function ItemDetail({route}){
     const {title, author, description, image} = route.params;

@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FlatList, View, SafeAreaView } from 'react-native';
-import { bookData } from './constants';
+
+import { bookData } from '@constants/constants';
 import BookItem from '@components/BookItem';
 import styles from './styles';
 
-function HomeList({ navigation }){
+function HomeList(){
     const keyExtractor = ({id}) => `Libro: ${id}`;
 
     const itemSeparator = () => <View style={styles.separator}/>;
-
-    const handleNavigateToDetail = () => navigation.navigate('ItemDetail', {});
 
     const renderItem = ({item}) => {
         const {title, author, description, image} = item;
