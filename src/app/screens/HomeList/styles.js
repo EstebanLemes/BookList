@@ -1,31 +1,23 @@
 import { StyleSheet, BackHandler } from 'react-native';
+import { white, black, red, softGrey } from '@constants/colors';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1, 
-        backgroundColor: '#FFF',
+        backgroundColor: white,
         justifyContent: 'center',
         alignItems: 'center',
+        paddingVertical: 10,
     },
     contentConteiner: {
-        backgroundColor: '#FFF',
+        backgroundColor: white,
         flex: 1,
         alignItems: 'center',
     },
     separator: {
         height: 2,
         margin: 10,
-        backgroundColor: '#000'
-    },
-    button: {
-        backgroundColor: '#bbb',
-        width: '85%',
-        height: 50,
-        marginVertical: 20,
-        justifyContent: 'center',
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: '#F00',
+        backgroundColor: black
     },
     buttonTitle: {
         textAlign: 'center',

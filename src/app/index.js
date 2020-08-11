@@ -12,10 +12,10 @@ const AppStack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-        <AppStack.Navigator initialRouteName="Home" screenOptions={{headerStyle: {backgroundColor: '#000',},headerTintColor: '#FFF',}}>
+        <AppStack.Navigator initialRouteName="Home" screenOptions={{headerStyle: {backgroundColor: '#000'},headerTintColor: '#FFF',}}>
           <AppStack.Screen name="Home" component={Home} options={{title: 'Inicio'}}/>
           <AppStack.Screen name="HomeList" component={HomeList} options={{title: 'Lista de Libros'}}/>
-          <AppStack.Screen name="ItemDetail" component={ItemDetail} options={{title: 'Detalles'}}/>
+          <AppStack.Screen name="ItemDetail" component={ItemDetail} options={{title: 'Detalles'}} initialParams={{title: 'No title'}}/>
         </AppStack.Navigator>
     </NavigationContainer>
   );

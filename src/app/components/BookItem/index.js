@@ -1,37 +1,22 @@
 import React, { useState } from 'react';
 import { Text, Image, View, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles';
 
 function BookItem({title, author, description, image}){
 
-    const [bgColor, setBgColor] = useState(styles.bookContainer);
-    const [titleColor, setTitleColor] = useState(styles.title);
-    const [bodyColor, setBodyColor] = useState(styles.body);
-    const [authorColor, setAuthorColor] = useState(styles.subtitle);
-
-    const handlePress = () => {
-        if(bgColor == styles.bookContainer){
-            setBgColor(styles.bookContainerClicked);
-            setTitleColor(styles.titleClicked);
-            setBodyColor(styles.bodyClicked);
-            setAuthorColor(styles.subtitleClicked);
-        } else {
-            setBgColor(styles.bookContainer);
-            setTitleColor(styles.title);
-            setBodyColor(styles.body);
-            setAuthorColor(styles.subtitle);
-        }
-    }
+    const navigation = useNavigation();
+    const handleNavigateToDetail = () => navigation.navigate('ItemDetail',{title, author, description, image});
 
     return(
-        <TouchableOpacity onPress={() => {handlePress()}}>
-            <View  style={bgColor}>
+        <TouchableOpacity onPress={handleNavigateToDetail}>
+            <View  style={styles.bookContainer}>
                 <Image style={styles.imgBook} resizeMode="contain" source={{uri: image}}/>
                 <View style={styles.bookDesc}>
-                    <Text style={titleColor}>{title}</Text>
-                    <Text style={authorColor}>{author}</Text>
-                    <Text style={bodyColor} numberOfLines={3} ellipsizeMode="tail">{description}</Text>
+                    <Text style={styles.title}>{title}</Text>
+                    <Text style={styles.author}>{author}</Text>
+                    <Text style={styles.body} numberOfLines={3} ellipsizeMode="tail">{description}</Text>
                 </View>
             </View>
         </TouchableOpacity>

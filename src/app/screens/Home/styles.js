@@ -9,9 +9,6 @@ const styles = StyleSheet.create({
     bookView: {
         width: 350,
         height: 100,
-        borderWidth: 1,
-        borderColor: '#000',
-        borderRadius: 30,
     },
     imageBook: {
         width: '100%',
