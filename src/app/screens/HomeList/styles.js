@@ -1,5 +1,5 @@
-import { StyleSheet, BackHandler } from 'react-native';
-import { white, black, red, softGrey } from '@constants/colors';
+import { StyleSheet } from 'react-native';
+import { white, black } from '@constants/colors';
 
 const styles = StyleSheet.create({
     container: {
@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingVertical: 10,
+    },
+    darkContainer: {
+        backgroundColor: black,
     },
     contentConteiner: {
         backgroundColor: white,
@@ -19,10 +22,9 @@ const styles = StyleSheet.create({
         margin: 10,
         backgroundColor: black
     },
-    buttonTitle: {
-        textAlign: 'center',
-        fontWeight: 'bold',
-    }
+    separatorWhite: {
+        backgroundColor: white
+    },
 });
 
 export default styles;

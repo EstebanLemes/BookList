@@ -1,10 +1,14 @@
-import { StyleSheet, BackHandler } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { white, black } from '@constants/colors';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1, 
         alignItems: 'center',
+        backgroundColor: white,
+    },
+    containerDark: {
+        backgroundColor: black,
     },
     img: {
         width: 150,
@@ -29,11 +33,14 @@ const styles = StyleSheet.create({
         height: '10%',
         backgroundColor: `${black}75`,
     },
+    authorContainerDark: {
+        backgroundColor: `${white}85`,
+    },
     title: {
         marginTop: 10,
         fontSize: 18,
         fontWeight: 'bold',
-        color: white
+        color: white,
     },
     author: {
         fontWeight: 'bold',
@@ -45,12 +52,16 @@ const styles = StyleSheet.create({
         borderBottomEndRadius: 20,
         borderBottomStartRadius: 20,
         width: '100%',
-        height: '100%'
+        height: '100%',
     },
     description: {
         marginTop: 10,
         marginHorizontal: 10,
+        color: black,
         fontSize: 14,        
+    },
+    descriptionDark: {
+        color: white,
     }
 });
 

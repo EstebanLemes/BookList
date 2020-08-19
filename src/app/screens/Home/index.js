@@ -1,21 +1,17 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, {useContext} from 'react';
 import { SafeAreaView, Image, TouchableOpacity, View} from 'react-native';
 
 import styles from './styles';
 import image from '@assets/image/books.png';
-
-const rpo = 'https://images-na.ssl-images-amazon.com/images/I/71BjAljTQeL.jpg';
-const author = 'Ready Player One';
-const title = 'Ernest Cline';
-const description = 'Es una novela de ciencia ficción escrita por el autor estadounidense Ernes Cline y cuya edición original en inglés fue publicada el 16 de agosto de 2011 por la editorial Crown Publishers';
+import ThemeContext from '@context/themeContext';
 
 function Home({navigation}){
-
+    const {isLightTheme} = useContext(ThemeContext);
     const handleHome = () => navigation.navigate('HomeList');
 
     return(
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={[styles.container, isLightTheme && styles.containerDark]}>
             <TouchableOpacity onPress={handleHome}>
                 <View style={styles.bookView}>
                     <Image style={styles.imageBook} resizeMode="contain" source={image} />
