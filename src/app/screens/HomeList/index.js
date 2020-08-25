@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { FlatList, View, SafeAreaView } from 'react-native';
 import ThemeContext from '@context/themeContext';
+import BooksContext from '@context/booksContext';
 
-import { bookData } from '@constants/constants';
 import BookItem from '@components/BookItem';
 import styles from './styles';
 
 function HomeList(){
     const {isLightTheme} = useContext(ThemeContext);
+    const {books} = useContext(BooksContext);
     const keyExtractor = ({id}) => `Libro: ${id}`;
 
     const itemSeparator = () => <View style={[styles.separator, isLightTheme && styles.separatorWhite]}/>;
@@ -28,7 +29,7 @@ function HomeList(){
         <SafeAreaView style={[styles.container, isLightTheme && styles.darkContainer]}>
             <FlatList
                 bounces={false}
-                data={bookData}
+                data={books}
                 renderItem={renderItem}
                 keyExtractor={keyExtractor}
                 ItemSeparatorComponent={itemSeparator}
