@@ -1,9 +1,8 @@
 import api from '@config/api';
 
 export const getBookList = () =>
-    api.get('/api/faqs').then((response) => {
+    api.get('https://book-container.herokuapp.com/api/faqs').then((response) => {
         if(response.ok) {
-            console.warn('Service: ', response.data)
             return response.data;
         }
         return;
